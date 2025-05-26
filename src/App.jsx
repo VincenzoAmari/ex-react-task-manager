@@ -7,15 +7,23 @@ function App() {
   return (
     <GlobalProvider>
       <BrowserRouter>
-        <nav>
-          <NavLink to="/"> lista task</NavLink>
-          <NavLink to="/add"> add Task </NavLink>
-        </nav>
+        <div className="app-container">
+          <nav className="navbar">
+            <NavLink to="/" className="nav-link">
+              Lista Task
+            </NavLink>
+            <NavLink to="/add" className="nav-link">
+              Aggiungi Task
+            </NavLink>
+          </nav>
 
-        <Routes>
-          <Route path="/" element={<Tasklist />} />
-          <Route path="/add" element={<AddTask />} />
-        </Routes>
+          <main className="content">
+            <Routes>
+              <Route path="/" element={<Tasklist />} />
+              <Route path="/add" element={<AddTask />} />
+            </Routes>
+          </main>
+        </div>
       </BrowserRouter>
     </GlobalProvider>
   );
